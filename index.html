@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SesVer - NSosyal için yapay zekâ destekli erişilebilirlik prototipi">
+  <title>SesVer | NSosyal Erişilebilirlik Prototipi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">İçeriğe geç</a>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="NSosyal ana sayfa"><span>N</span>Sosyal</a>
+    <nav aria-label="Ana menü">
+      <button class="nav-button active" type="button" aria-current="page">Akış</button>
+      <button class="nav-button" type="button" id="openComposer">Gönderi oluştur</button>
+      <button class="profile-button" type="button" id="openProfile" aria-haspopup="dialog">Erişilebilirlik profili</button>
+    </nav>
+  </header>
+
+  <main id="main" class="layout">
+    <section class="feed" aria-labelledby="feedTitle">
+      <div class="intro">
+        <div>
+          <p class="eyebrow">NSosyal özellik prototipi</p>
+          <h1 id="feedTitle">SesVer ile herkes için anlaşılır içerik</h1>
+          <p>Gönderileri dinle, sadeleştir ve görsellerin betimlemesini incele.</p>
+        </div>
+        <span class="demo-badge">Çalışan MVP</span>
+      </div>
+
+      <article class="post" aria-labelledby="postAuthor">
+        <header class="post-header">
+          <div class="avatar" aria-hidden="true">A</div>
+          <div><h2 id="postAuthor">Anadolu Bilim</h2><p>@anadolubilim · 12 dk.</p></div>
+          <button class="icon-button" type="button" aria-label="Gönderi seçenekleri">•••</button>
+        </header>
+
+        <p id="originalText" class="post-text">Şehirlerde iklim değişikliğine uyum sağlayabilmek için yalnızca yeşil alan miktarını artırmak yeterli değildir. Yağmur suyunun yönetimi, geçirgen yüzeylerin çoğaltılması ve mahalle ölçeğinde ısı adalarının izlenmesi gibi birbirini tamamlayan uygulamaların birlikte planlanması gerekir.</p>
+        <p id="simpleText" class="post-text simplified" hidden>Şehirleri iklim değişikliğine hazırlamak için birkaç yöntem birlikte kullanılmalıdır. Yeşil alanlar artırılmalı, yağmur suyu doğru yönetilmeli ve suyu geçiren zeminler çoğaltılmalıdır. Ayrıca çok ısınan mahalleler düzenli olarak izlenmelidir.</p>
+
+        <figure class="post-visual">
+          <svg role="img" aria-labelledby="visualTitle visualDesc" viewBox="0 0 800 390">
+            <title id="visualTitle">Yeşil şehir illüstrasyonu</title>
+            <desc id="visualDesc">Bisiklet yolu, ağaçlar, yağmur bahçesi ve güneş panelli binalar bulunan yeşil bir şehir çizimi.</desc>
+            <rect width="800" height="390" fill="#dff3ff"/><circle cx="675" cy="70" r="38" fill="#ffd36b"/>
+            <path d="M0 295 Q160 210 320 292 T640 280 T800 270 V390 H0Z" fill="#a7db8d"/>
+            <rect x="70" y="120" width="145" height="190" rx="4" fill="#fff"/><rect x="255" y="75" width="180" height="235" rx="4" fill="#f7f7f7"/><rect x="510" y="145" width="180" height="165" rx="4" fill="#fff"/>
+            <g fill="#5c89b7"><rect x="90" y="145" width="35" height="35"/><rect x="145" y="145" width="35" height="35"/><rect x="285" y="105" width="42" height="40"/><rect x="355" y="105" width="42" height="40"/><rect x="540" y="175" width="42" height="38"/><rect x="615" y="175" width="42" height="38"/></g>
+            <g fill="#2f7d45"><circle cx="235" cy="255" r="35"/><rect x="230" y="255" width="10" height="55"/><circle cx="470" cy="245" r="42"/><rect x="464" y="245" width="12" height="65"/><circle cx="720" cy="255" r="36"/><rect x="714" y="255" width="12" height="55"/></g>
+            <path d="M0 340 H800" stroke="#5d6570" stroke-width="18"/><path d="M0 340 H800" stroke="#fff" stroke-width="3" stroke-dasharray="24 20"/>
+            <g transform="translate(360 315)" fill="none" stroke="#172235" stroke-width="5"><circle cx="0" cy="35" r="20"/><circle cx="70" cy="35" r="20"/><path d="M0 35 L25 0 L47 35 H0 M25 0 L70 35 M25 0 H52"/></g>
+          </svg>
+          <figcaption id="imageDescription" hidden><strong>Yapay zekâ betimlemesi - düzenlenebilir:</strong> Açık mavi gökyüzü altında ağaçlar, bisiklet yolu ve güneş panelli binalar bulunan yeşil bir şehir illüstrasyonu. Ön planda bisiklet süren bir kişi görülüyor.</figcaption>
+        </figure>
+
+        <div class="access-actions" aria-label="SesVer araçları">
+          <button class="action" type="button" id="listenBtn"><span aria-hidden="true">▶</span><span>Dinle</span></button>
+          <button class="action" type="button" id="simplifyBtn" aria-pressed="false"><span aria-hidden="true">Aa</span><span>Sadeleştir</span></button>
+          <button class="action" type="button" id="describeBtn" aria-expanded="false" aria-controls="imageDescription"><span aria-hidden="true">◉</span><span>Görseli betimle</span></button>
+        </div>
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+        <footer class="post-footer" aria-label="Gönderi etkileşimleri"><span>♡ 128</span><span>↻ 34</span><span>⌁ 18</span></footer>
+      </article>
+    </section>
+
+    <aside class="side-panel" aria-labelledby="profileSummary">
+      <p class="eyebrow">Kişisel ayarlar</p><h2 id="profileSummary">Erişilebilirlik profilin</h2>
+      <ul class="feature-list"><li><span>Otomatik altyazı</span><strong>Açık</strong></li><li><span>Kolay okuma</span><strong>Açık</strong></li><li><span>Görsel betimleme</span><strong>İsteğe bağlı</strong></li></ul>
+      <button class="secondary wide" type="button" id="sideProfileBtn">Profili düzenle</button>
+      <div class="privacy-note"><strong>Kontrol sende</strong><p>SesVer öneri sunar; gönderileri engellemez ve orijinal içeriği her zaman erişilebilir tutar.</p></div>
+    </aside>
+  </main>
+
+  <dialog id="profileDialog" aria-labelledby="profileTitle">
+    <form method="dialog">
+      <div class="dialog-header"><div><p class="eyebrow">Kişiselleştirme</p><h2 id="profileTitle">Erişilebilirlik profili</h2></div><button class="icon-button" value="cancel" aria-label="Kapat">×</button></div>
+      <p>İhtiyaç duyduğun özellikleri seç. Ayarlar yalnızca deneyimini kişiselleştirmek için kullanılır.</p>
+      <label class="switch-row"><span><strong>Otomatik altyazı</strong><small>Videolarda konuşmayı yazı olarak gösterir.</small></span><input type="checkbox" checked></label>
+      <label class="switch-row"><span><strong>Kolay okuma</strong><small>Uzun metinlerde sadeleştirme düğmesini öne çıkarır.</small></span><input type="checkbox" checked></label>
+      <label class="switch-row"><span><strong>Görsel betimleme</strong><small>Görsellerin kısa açıklamasını otomatik açar.</small></span><input id="autoDescribe" type="checkbox"></label>
+      <label for="speechRate"><strong>Okuma hızı</strong></label><input id="speechRate" type="range" min="0.7" max="1.5" value="1" step="0.1"><output id="rateOutput">1×</output>
+      <div class="dialog-actions"><button class="secondary" value="cancel">Vazgeç</button><button class="primary" value="save">Kaydet</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="composerDialog" aria-labelledby="composerTitle">
+    <form method="dialog" id="composerForm">
+      <div class="dialog-header"><div><p class="eyebrow">İçerik üretimi</p><h2 id="composerTitle">Gönderi oluştur</h2></div><button class="icon-button" value="cancel" aria-label="Kapat">×</button></div>
+      <label for="composerText"><strong>Gönderi metni</strong></label>
+      <textarea id="composerText" rows="5">Yeni etkinliğimizin tüm detayları afişte. Katılmak isteyen herkes bağlantıya tıklayabilir.</textarea>
+      <label for="altInput"><strong>Görsel açıklaması</strong></label><input id="altInput" placeholder="Görselde ne olduğunu kısaca anlatın">
+      <div class="check-panel"><div><h3>Erişilebilirlik kontrolü</h3><span id="checkScore" class="score">2 öneri</span></div><ul id="checkList"><li class="warning">Görsel açıklaması eksik.</li><li class="warning">“Afişte” denilen bilgi metinde yer almıyor.</li><li class="ok">Dil açık ve kısa.</li></ul><button id="runCheck" class="secondary" type="button">Tekrar kontrol et</button></div>
+      <p class="microcopy">Kontrol öneri sunar, paylaşımı engellemez. Otomatik çıktıları yayınlamadan önce gözden geçirin.</p>
+      <div class="dialog-actions"><button class="secondary" value="cancel">Taslağı kapat</button><button class="primary" id="shareBtn" value="share">Paylaş</button></div>
+    </form>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>
+
